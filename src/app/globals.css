@@ -1,26 +1,253 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-jdm: #dc2626;
+  --color-jdm-light: #ef4444;
+  --color-jdm-dark: #b91c1c;
+  --color-jdm-glow: #ff3333;
+  --color-surface: #0e0e0e;
+  --color-surface-light: #151515;
+  --color-surface-lighter: #1c1c1c;
+  --color-muted: #777777;
+  --color-muted-light: #999999;
+  --font-heading: var(--font-bebas);
+  --font-body: var(--font-barlow);
+  --font-jp: var(--font-noto-jp);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+:root {
+  --background: #080808;
+  --foreground: #f0f0f0;
+}
+
+* {
+  scroll-behavior: smooth;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* === Animations === */
+
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slide-in-right {
+  from { opacity: 0; transform: translateX(60px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 20px rgba(220, 38, 38, 0.3); }
+  50% { box-shadow: 0 0 40px rgba(220, 38, 38, 0.6); }
+}
+
+@keyframes speed-line {
+  0% { transform: translateX(-100%); opacity: 0; }
+  20% { opacity: 1; }
+  100% { transform: translateX(200vw); opacity: 0; }
+}
+
+@keyframes kanji-drift {
+  0% { opacity: 0.02; transform: translateY(0); }
+  50% { opacity: 0.05; }
+  100% { opacity: 0.02; transform: translateY(-20px); }
+}
+
+@keyframes rev {
+  0%, 100% { transform: scaleX(1); }
+  50% { transform: scaleX(1.02); }
+}
+
+.animate-fade-up {
+  animation: fade-up 0.7s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.animate-fade-in {
+  animation: fade-in 0.8s ease-out both;
+}
+
+.animate-slide-in-right {
+  animation: slide-in-right 0.7s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 3s ease-in-out infinite;
+}
+
+.stagger-1 { animation-delay: 0.1s; }
+.stagger-2 { animation-delay: 0.2s; }
+.stagger-3 { animation-delay: 0.3s; }
+.stagger-4 { animation-delay: 0.4s; }
+.stagger-5 { animation-delay: 0.5s; }
+.stagger-6 { animation-delay: 0.6s; }
+
+/* === Hero === */
+
+.hero-jdm {
+  background:
+    radial-gradient(ellipse 70% 50% at 50% -10%, rgba(220, 38, 38, 0.12) 0%, transparent 70%),
+    radial-gradient(ellipse 40% 30% at 85% 50%, rgba(220, 38, 38, 0.06) 0%, transparent 60%),
+    linear-gradient(180deg, #080808 0%, #0a0a0a 100%);
+}
+
+/* === Rising Sun === */
+
+.rising-sun {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  opacity: 0.035;
+}
+
+.rising-sun::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 200%;
+  height: 200%;
+  transform: translate(-50%, -50%);
+  background: repeating-conic-gradient(
+    rgba(220, 38, 38, 0.8) 0deg 10deg,
+    transparent 10deg 20deg
+  );
+}
+
+/* === Text Effects === */
+
+.jdm-gradient-text {
+  background: linear-gradient(135deg, #dc2626 0%, #ef4444 40%, #ff6b6b 60%, #dc2626 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.text-stroke {
+  -webkit-text-stroke: 1px rgba(220, 38, 38, 0.3);
+  color: transparent;
+}
+
+/* === Card Effects === */
+
+.card-jdm {
+  position: relative;
+  overflow: hidden;
+}
+
+.card-jdm::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 3px;
+  height: 100%;
+  background: linear-gradient(180deg, transparent, #dc2626, transparent);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.card-jdm:hover::before {
+  opacity: 1;
+}
+
+.card-jdm::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(220, 38, 38, 0.5), transparent);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.card-jdm:hover::after {
+  opacity: 1;
+}
+
+/* === Speed Lines === */
+
+.speed-line {
+  position: absolute;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(220, 38, 38, 0.4), transparent);
+  animation: speed-line 4s linear infinite;
+}
+
+/* === Diagonal Stripe Pattern === */
+
+.diagonal-stripes {
+  background-image: repeating-linear-gradient(
+    -45deg,
+    transparent,
+    transparent 10px,
+    rgba(220, 38, 38, 0.03) 10px,
+    rgba(220, 38, 38, 0.03) 11px
+  );
+}
+
+/* === Carbon Fiber Texture === */
+
+.carbon-fiber {
+  background-image:
+    radial-gradient(circle at 1px 1px, rgba(255,255,255,0.03) 1px, transparent 0);
+  background-size: 4px 4px;
+}
+
+/* === Noise Overlay === */
+
+.noise-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  pointer-events: none;
+  opacity: 0.025;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+}
+
+/* === Form Inputs === */
+
+input:focus, textarea:focus, select:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(220, 38, 38, 0.4);
+  border-color: rgba(220, 38, 38, 0.5);
+}
+
+/* === Red Accent Line === */
+
+.red-line {
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #dc2626, transparent);
+}
+
+/* === Scrollbar === */
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #080808;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #dc2626;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #ef4444;
 }
