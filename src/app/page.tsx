@@ -3,50 +3,50 @@
 import { useState } from "react";
 
 const PHONE = "+48 XXX XXX XXX";
-const EMAIL = "kontakt@arekdetailing.pl";
+const EMAIL = "kontakt@arekgarage.pl";
 
 const services = [
   {
-    title: "Korekta Lakieru",
-    jp: "研磨",
+    title: "Serwis Mechaniczny",
+    jp: "整備",
     description:
-      "Usuwamy zarysowania, hologramy i oxidację. Twój lakier odzyska fabryczny blask dzięki wieloetapowej korekcie maszynowej.",
-    features: ["Jedno- i wieloetapowa", "Polerowanie maszynowe", "Ochrona lakieru"],
+      "Kompleksowa obsługa mechaniczna Twojego auta — od przeglądów po naprawy silnika. Specjalizacja w motorach JDM.",
+    features: ["Naprawy silnika", "Przeglądy okresowe", "Wymiana rozrządu"],
   },
   {
-    title: "Powłoka Ceramiczna",
-    jp: "陶磁器",
+    title: "Tuning & Performance",
+    jp: "改造",
     description:
-      "Wieloletnia ochrona lakieru z hydrofobową powłoką ceramiczną. Łatwiejsze mycie i głęboki połysk na lata.",
-    features: ["Ochrona do 5 lat", "Efekt hydrofobowy", "Głęboki połysk"],
+      "Zwiększ moc i osiągi swojego auta. Chipy, ECU remap, intake, exhaust — wyciągniemy maksimum z Twojego silnika.",
+    features: ["ECU Remap / Chip tuning", "Układ dolotowy & wydechowy", "Pomiar na hamowni"],
   },
   {
-    title: "Folia PPF",
-    jp: "保護",
+    title: "Zawieszenie & Podwozie",
+    jp: "足回り",
     description:
-      "Niewidoczna folia ochronna zabezpiecza lakier przed odpryskami, zarysowaniami i czynnikami atmosferycznymi.",
-    features: ["Samoregeneracja", "Pełna przezroczystość", "Ochrona mechaniczna"],
+      "Coilovery, stabilizatory, tuleje — dopasujemy zawieszenie do Twoich potrzeb. Street, drift czy tor.",
+    features: ["Montaż coiloverów", "Geometria kół", "Wzmocnienia podwozia"],
   },
   {
-    title: "Detailing Wnętrza",
-    jp: "内装",
+    title: "Diagnostyka Komputerowa",
+    jp: "診断",
     description:
-      "Kompleksowe czyszczenie i pielęgnacja wnętrza — pranie tapicerki, czyszczenie skóry, ozonowanie.",
-    features: ["Pranie tapicerki", "Pielęgnacja skóry", "Ozonowanie"],
+      "Precyzyjna diagnostyka OBD2 i specjalistyczne skanery. Odczyt kodów błędów, analiza parametrów na żywo.",
+    features: ["Odczyt kodów błędów", "Diagnostyka silnika", "Analiza parametrów live"],
   },
   {
-    title: "Mycie Detailingowe",
-    jp: "洗車",
+    title: "Hamulce & Bezpieczeństwo",
+    jp: "制動",
     description:
-      "Bezpieczna, wieloetapowa metoda mycia, która nie rysuje lakieru. Dekontaminacja i zabezpieczenie w jednym.",
-    features: ["Metoda pre-wash", "Dekontaminacja", "Wosk końcowy"],
+      "Wymiana klocków, tarcz, upgrade hamulców. Big brake kity i przewody w oplocie — pewne hamowanie na torze i ulicy.",
+    features: ["Wymiana klocków & tarcz", "Big Brake Kit", "Przewody w oplocie"],
   },
   {
-    title: "Pakiety Biznesowe",
-    jp: "企業",
+    title: "Turbo & Doładowanie",
+    jp: "過給",
     description:
-      "Regularna opieka nad flotą firmową. Elastyczne pakiety dopasowane do potrzeb Twojego biznesu.",
-    features: ["Floty firmowe", "Elastyczne terminy", "Rabaty ilościowe"],
+      "Montaż turbo, intercoolerów, wastegate i blow-off. Budowa setupów turbo od zera dla silników JDM.",
+    features: ["Montaż turbosprężarek", "Intercooler & piping", "Wastegate & BOV"],
   },
 ];
 
@@ -55,25 +55,25 @@ const whyUs = [
     number: "01",
     title: "Pasja JDM",
     jp: "情熱",
-    text: "Kochamy japońską motoryzację. Każdy samochód traktujemy jak własny — z szacunkiem i precyzją.",
+    text: "Kochamy japońską motoryzację. Silniki SR20, RB26, 2JZ — to nasza codzienność i pasja.",
   },
   {
     number: "02",
-    title: "Produkty Premium",
+    title: "Części Premium",
     jp: "品質",
-    text: "Pracujemy wyłącznie na sprawdzonych, profesjonalnych produktach najwyższej jakości.",
+    text: "Pracujemy wyłącznie na sprawdzonych częściach OEM i renomowanych markach aftermarket.",
   },
   {
     number: "03",
     title: "Precyzja 職人",
     jp: "職人",
-    text: "Dbamy o każdy detal — od lakieru po wnętrze. Shokunin — duch japońskiego rzemiosła.",
+    text: "Każda śruba dokręcona z momentem, każdy przewód poprowadzony idealnie. Duch Shokunin.",
   },
   {
     number: "04",
     title: "Warszawa Zacisze",
     jp: "場所",
-    text: "Wygodna lokalizacja na Zaciszu. Łatwy dojazd i parking pod studio.",
+    text: "Wygodna lokalizacja na Zaciszu. Wyposażony warsztat z podnośnikiem i hamownią.",
   },
 ];
 
@@ -139,10 +139,10 @@ export default function Home() {
             </div>
             <div className="flex flex-col">
               <span className="font-heading text-xl tracking-[0.15em] text-white leading-none">
-                AREK DETAILING
+                AREK GARAGE
               </span>
               <span className="text-[9px] uppercase tracking-[0.35em] text-muted mt-0.5 font-body">
-                ワルシャワ • Warszawa Zacisze
+                ワルシャワ • Warsztat JDM
               </span>
             </div>
           </a>
@@ -161,7 +161,7 @@ export default function Home() {
               href="#kontakt"
               className="relative ml-2 px-6 py-2.5 bg-jdm text-white text-xs font-semibold tracking-wider uppercase skew-x-[-6deg] hover:bg-jdm-light transition-colors"
             >
-              <span className="inline-block skew-x-[6deg]">Bezpłatna Wycena</span>
+              <span className="inline-block skew-x-[6deg]">Umów Wizytę</span>
             </a>
           </div>
 
@@ -169,7 +169,7 @@ export default function Home() {
             href="#kontakt"
             className="md:hidden relative px-4 py-2 bg-jdm text-white text-xs font-semibold tracking-wider uppercase skew-x-[-6deg]"
           >
-            <span className="inline-block skew-x-[6deg]">Wycena</span>
+            <span className="inline-block skew-x-[6deg]">Wizyta</span>
           </a>
         </div>
       </nav>
@@ -179,14 +179,12 @@ export default function Home() {
         <RisingSun />
         <SpeedLines />
 
-        {/* Decorative kanji watermark */}
         <div className="absolute inset-0 flex items-center justify-center pointer-events-none select-none" aria-hidden="true">
           <span className="font-jp text-[28vw] font-black text-white/[0.02] leading-none">
-            完璧
+            車庫
           </span>
         </div>
 
-        {/* Grid overlay */}
         <div className="absolute inset-0 opacity-[0.03]"
           style={{
             backgroundImage:
@@ -195,7 +193,6 @@ export default function Home() {
           }}
         />
 
-        {/* Red glow orbs */}
         <div className="absolute top-1/3 left-1/4 w-96 h-96 bg-jdm/8 rounded-full blur-[150px]" />
         <div className="absolute bottom-1/4 right-1/5 w-72 h-72 bg-jdm/5 rounded-full blur-[120px]" />
 
@@ -205,24 +202,23 @@ export default function Home() {
               <span className="inline-block skew-x-[6deg] flex items-center gap-3">
                 <span className="w-2 h-2 bg-jdm animate-pulse" />
                 <span className="text-xs uppercase tracking-[0.3em] text-jdm font-semibold font-body">
-                  JDM Spirit • Warszawa Zacisze
+                  JDM Garage • Warszawa Zacisze
                 </span>
               </span>
             </div>
           </div>
 
-          {/* JP decorative text */}
           <div className="animate-fade-up stagger-1 mb-4">
             <span className="font-jp text-sm tracking-[0.5em] text-jdm/40">
-              アレク・ディテーリング
+              アレク・ガレージ
             </span>
           </div>
 
           <h1 className="animate-fade-up stagger-2 font-heading text-6xl sm:text-7xl md:text-8xl lg:text-9xl leading-[0.9] tracking-[0.04em] max-w-6xl mx-auto">
-            PERFEKCJA W{" "}
-            <span className="jdm-gradient-text">KAŻDYM</span>
+            WARSZTAT Z{" "}
+            <span className="jdm-gradient-text">DUSZĄ</span>
             <br />
-            DETALU
+            JDM
           </h1>
 
           <div className="animate-fade-up stagger-3 my-8 flex justify-center">
@@ -230,9 +226,9 @@ export default function Home() {
           </div>
 
           <p className="animate-fade-up stagger-3 text-lg md:text-xl text-muted max-w-2xl mx-auto leading-relaxed font-light">
-            Profesjonalny auto detailing z{" "}
-            <span className="text-jdm-light font-medium">duchem JDM</span>. Korekta lakieru,
-            powłoki ceramiczne, PPF — pielęgnujemy Twoje auto z japońską precyzją.
+            Serwis mechaniczny dla miłośników{" "}
+            <span className="text-jdm-light font-medium">japońskiej motoryzacji</span>. Naprawy,
+            tuning, diagnostyka — Twój JDM w rękach fachowców z pasją.
           </p>
 
           <div className="animate-fade-up stagger-4 mt-12 flex flex-col sm:flex-row gap-4 justify-center">
@@ -240,7 +236,7 @@ export default function Home() {
               href="#kontakt"
               className="relative px-10 py-4 bg-jdm text-white font-semibold text-sm tracking-wider uppercase skew-x-[-6deg] hover:bg-jdm-light transition-all hover:shadow-[0_0_50px_rgba(220,38,38,0.3)]"
             >
-              <span className="inline-block skew-x-[6deg]">Umów Bezpłatną Wycenę</span>
+              <span className="inline-block skew-x-[6deg]">Umów Wizytę w Warsztacie</span>
             </a>
             <a
               href="#uslugi"
@@ -253,15 +249,15 @@ export default function Home() {
           <div className="animate-fade-up stagger-5 mt-20 flex flex-wrap items-center justify-center gap-x-10 gap-y-4 text-sm text-muted">
             <div className="flex items-center gap-2">
               <span className="text-jdm font-jp text-xs">★</span>
-              <span>Setki zadowolonych klientów</span>
+              <span>Specjalizacja JDM</span>
             </div>
             <div className="flex items-center gap-2">
               <span className="text-jdm font-jp text-xs">★</span>
-              <span>Produkty premium</span>
+              <span>Części OEM & aftermarket</span>
             </div>
             <div className="flex items-center gap-2">
               <span className="text-jdm font-jp text-xs">★</span>
-              <span>JDM Passion</span>
+              <span>Hamownia & diagnostyka</span>
             </div>
           </div>
         </div>
@@ -288,13 +284,13 @@ export default function Home() {
                 </span>
               </div>
               <h2 className="font-heading text-5xl md:text-6xl tracking-[0.04em]">
-                CO MOŻEMY DLA CIEBIE{" "}
-                <span className="jdm-gradient-text">ZROBIĆ</span>
+                CO ROBIMY W{" "}
+                <span className="jdm-gradient-text">GARAŻU</span>
               </h2>
             </div>
             <p className="text-muted max-w-md text-sm leading-relaxed md:text-right">
-              Od mycia detailingowego po kompleksową ochronę lakieru — pełen zakres usług
-              z japońską dbałością o każdy detal.
+              Od serwisu mechanicznego po budowę setupów turbo — kompleksowa obsługa
+              z japońską precyzją i pasją do JDM.
             </p>
           </div>
 
@@ -337,7 +333,6 @@ export default function Home() {
         <SpeedLines />
         <div className="absolute inset-0 bg-linear-to-b from-transparent via-jdm/[0.02] to-transparent" />
 
-        {/* Background kanji */}
         <div className="absolute right-0 top-1/2 -translate-y-1/2 pointer-events-none select-none" aria-hidden="true">
           <span className="font-jp text-[20vw] font-black text-white/[0.015] leading-none">
             情熱
@@ -354,15 +349,15 @@ export default function Home() {
                 </span>
               </div>
               <h2 className="font-heading text-5xl md:text-6xl tracking-[0.04em] leading-[0.95]">
-                DETAILING TO NASZA
+                MECHANIKA TO NASZA
                 <br />
                 <span className="jdm-gradient-text">PASJA 情熱</span>
               </h2>
               <p className="mt-6 text-muted leading-relaxed max-w-lg">
-                Arek Detailing to nie tylko studio — to miejsce, gdzie japońska
+                Arek Garage to nie tylko warsztat — to miejsce, gdzie japońska
                 filozofia <span className="text-jdm-light">Shokunin (職人)</span> spotyka
-                się z nowoczesną technologią. Każdy samochód traktujemy z precyzją
-                japońskiego rzemieślnika.
+                się z doświadczeniem mechanika. Każdy silnik, każdy układ napędowy
+                traktujemy z precyzją japońskiego rzemieślnika.
               </p>
               <div className="mt-10 flex items-center gap-5">
                 <a
@@ -429,10 +424,10 @@ export default function Home() {
             <div className="hidden md:block absolute top-16 left-[12.5%] right-[12.5%] h-[2px] bg-linear-to-r from-transparent via-jdm/20 to-transparent" />
 
             {[
-              { step: "01", title: "Kontakt", jp: "連絡", desc: "Opisz swoje potrzeby — doradzimy najlepsze rozwiązanie i przygotujemy wycenę." },
-              { step: "02", title: "Inspekcja", jp: "検査", desc: "Dokładna ocena stanu lakieru i wnętrza auta. Pomiar grubości lakieru." },
-              { step: "03", title: "Realizacja", jp: "実行", desc: "Precyzyjna praca z użyciem profesjonalnych narzędzi i produktów premium." },
-              { step: "04", title: "Odbiór", jp: "完了", desc: "Prezentacja efektów i wskazówki dotyczące dalszej pielęgnacji auta." },
+              { step: "01", title: "Kontakt", jp: "連絡", desc: "Opisz problem lub zakres prac — doradzimy rozwiązanie i umówimy termin." },
+              { step: "02", title: "Diagnostyka", jp: "診断", desc: "Dokładna inspekcja i diagnostyka komputerowa. Znajdziemy przyczynę usterki." },
+              { step: "03", title: "Naprawa", jp: "修理", desc: "Precyzyjna naprawa z użyciem sprawdzonych części OEM i aftermarket." },
+              { step: "04", title: "Odbiór", jp: "完了", desc: "Jazda próbna, prezentacja wykonanych prac i gwarancja na usługę." },
             ].map((item) => (
               <div key={item.step} className="text-center relative group">
                 <div className="w-32 h-32 mx-auto flex items-center justify-center mb-6 relative">
@@ -461,7 +456,6 @@ export default function Home() {
         <div className="absolute inset-0 hero-jdm" />
         <SpeedLines />
 
-        {/* Background kanji */}
         <div className="absolute left-0 bottom-0 pointer-events-none select-none" aria-hidden="true">
           <span className="font-jp text-[15vw] font-black text-white/[0.015] leading-none">
             予約
@@ -478,13 +472,13 @@ export default function Home() {
                 </span>
               </div>
               <h2 className="font-heading text-5xl md:text-6xl tracking-[0.04em] leading-[0.95]">
-                UMÓW SIĘ NA
+                UMÓW WIZYTĘ
                 <br />
-                <span className="jdm-gradient-text">BEZPŁATNĄ WYCENĘ</span>
+                <span className="jdm-gradient-text">W WARSZTACIE</span>
               </h2>
               <p className="mt-6 text-muted leading-relaxed max-w-lg">
-                Wypełnij formularz, a odezwiemy się w ciągu 24 godzin z
-                indywidualną wyceną dopasowaną do Twojego auta.
+                Opisz problem lub zakres prac, a skontaktujemy się w ciągu 24 godzin
+                z wyceną i dostępnym terminem.
               </p>
 
               <div className="mt-12 space-y-7">
@@ -548,7 +542,7 @@ export default function Home() {
                     <p className="text-sm text-muted">
                       Pon – Pt: 8:00 – 18:00
                       <br />
-                      Sob: 9:00 – 15:00
+                      Sob: 9:00 – 14:00
                     </p>
                   </div>
                 </div>
@@ -575,7 +569,7 @@ export default function Home() {
                     <p className="font-jp text-sm text-jdm/40 mb-4">ありがとうございます</p>
                     <p className="text-muted max-w-sm mx-auto text-sm">
                       Twoje zgłoszenie zostało wysłane. Odezwiemy się w ciągu 24 godzin
-                      z indywidualną wyceną.
+                      z wyceną i dostępnym terminem.
                     </p>
                     <button
                       onClick={() => setIsSubmitted(false)}
@@ -588,9 +582,9 @@ export default function Home() {
                   <form onSubmit={handleSubmit} className="space-y-5">
                     <div className="flex items-center justify-between mb-6">
                       <h3 className="font-heading text-2xl tracking-wider">
-                        FORMULARZ WYCENY
+                        FORMULARZ ZGŁOSZENIA
                       </h3>
-                      <span className="font-jp text-sm text-jdm/20">見積もり</span>
+                      <span className="font-jp text-sm text-jdm/20">修理依頼</span>
                     </div>
 
                     <div className="grid sm:grid-cols-2 gap-5">
@@ -655,7 +649,7 @@ export default function Home() {
 
                     <div>
                       <label htmlFor="service" className="block text-xs text-muted mb-2 uppercase tracking-wider">
-                        Interesująca usługa
+                        Rodzaj usługi
                       </label>
                       <select
                         id="service"
@@ -664,19 +658,19 @@ export default function Home() {
                         className="w-full px-4 py-3 bg-surface-lighter border border-white/10 text-sm text-white transition-colors hover:border-white/20 appearance-none"
                       >
                         <option value="">Wybierz usługę</option>
-                        <option value="korekta">Korekta Lakieru</option>
-                        <option value="ceramika">Powłoka Ceramiczna</option>
-                        <option value="ppf">Folia PPF</option>
-                        <option value="wnetrze">Detailing Wnętrza</option>
-                        <option value="mycie">Mycie Detailingowe</option>
-                        <option value="pakiet">Pakiet Biznesowy</option>
+                        <option value="serwis">Serwis Mechaniczny</option>
+                        <option value="tuning">Tuning & Performance</option>
+                        <option value="zawieszenie">Zawieszenie & Podwozie</option>
+                        <option value="diagnostyka">Diagnostyka Komputerowa</option>
+                        <option value="hamulce">Hamulce & Bezpieczeństwo</option>
+                        <option value="turbo">Turbo & Doładowanie</option>
                         <option value="inne">Inne</option>
                       </select>
                     </div>
 
                     <div>
                       <label htmlFor="message" className="block text-xs text-muted mb-2 uppercase tracking-wider">
-                        Dodatkowe informacje
+                        Opis problemu / zakres prac
                       </label>
                       <textarea
                         id="message"
@@ -684,7 +678,7 @@ export default function Home() {
                         value={formData.message}
                         onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                         className="w-full px-4 py-3 bg-surface-lighter border border-white/10 text-sm text-white placeholder:text-muted/40 transition-colors hover:border-white/20 resize-none"
-                        placeholder="Opisz stan lakieru, oczekiwania lub zadaj pytanie..."
+                        placeholder="Opisz usterkę, objawy lub zakres prac, które Cię interesują..."
                       />
                     </div>
 
@@ -703,7 +697,7 @@ export default function Home() {
                             Wysyłanie...
                           </span>
                         ) : (
-                          "Wyślij Zapytanie"
+                          "Wyślij Zgłoszenie"
                         )}
                       </span>
                     </button>
@@ -727,13 +721,13 @@ export default function Home() {
         <div className="max-w-4xl mx-auto px-6 text-center relative">
           <span className="font-jp text-4xl md:text-5xl text-jdm/10 block mb-4">準備完了</span>
           <h2 className="font-heading text-4xl md:text-6xl tracking-[0.04em] leading-[0.95]">
-            GOTOWY NA{" "}
-            <span className="jdm-gradient-text">METAMORFOZĘ</span>
-            <br />SWOJEGO AUTA?
+            TWÓJ JDM POTRZEBUJE{" "}
+            <span className="jdm-gradient-text">FACHOWCA</span>
+            ?
           </h2>
           <p className="mt-6 text-muted max-w-xl mx-auto">
-            Dołącz do grona zadowolonych klientów Arek Detailing. Pierwsza wycena
-            jest zawsze bezpłatna.
+            Dołącz do grona zadowolonych klientów Arek Garage. Diagnostyka
+            i wycena zawsze bezpłatna.
           </p>
           <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
             <a
@@ -764,16 +758,16 @@ export default function Home() {
                 </div>
                 <div className="flex flex-col">
                   <span className="font-heading text-xl tracking-[0.15em] text-white leading-none">
-                    AREK DETAILING
+                    AREK GARAGE
                   </span>
                   <span className="text-[9px] uppercase tracking-[0.35em] text-muted mt-0.5">
-                    ワルシャワ • Warszawa Zacisze
+                    ワルシャワ • Warsztat JDM
                   </span>
                 </div>
               </div>
               <p className="text-sm text-muted leading-relaxed mt-4">
-                Profesjonalny auto detailing z duchem JDM. Korekta lakieru,
-                powłoki ceramiczne, PPF i kompleksowa pielęgnacja z japońską precyzją.
+                Warsztat samochodowy z duszą JDM. Serwis mechaniczny, tuning,
+                diagnostyka i naprawy — z japońską precyzją i pasją do motoryzacji.
               </p>
               <div className="mt-4 font-jp text-xs text-jdm/20">
                 情熱 • 品質 • 職人
@@ -783,11 +777,11 @@ export default function Home() {
             <div>
               <h4 className="font-heading text-lg tracking-wider mb-5">USŁUGI</h4>
               <ul className="space-y-3 text-sm text-muted">
-                <li><a href="#uslugi" className="hover:text-jdm transition-colors">Korekta Lakieru</a></li>
-                <li><a href="#uslugi" className="hover:text-jdm transition-colors">Powłoka Ceramiczna</a></li>
-                <li><a href="#uslugi" className="hover:text-jdm transition-colors">Folia PPF</a></li>
-                <li><a href="#uslugi" className="hover:text-jdm transition-colors">Detailing Wnętrza</a></li>
-                <li><a href="#uslugi" className="hover:text-jdm transition-colors">Mycie Detailingowe</a></li>
+                <li><a href="#uslugi" className="hover:text-jdm transition-colors">Serwis Mechaniczny</a></li>
+                <li><a href="#uslugi" className="hover:text-jdm transition-colors">Tuning & Performance</a></li>
+                <li><a href="#uslugi" className="hover:text-jdm transition-colors">Zawieszenie & Podwozie</a></li>
+                <li><a href="#uslugi" className="hover:text-jdm transition-colors">Diagnostyka Komputerowa</a></li>
+                <li><a href="#uslugi" className="hover:text-jdm transition-colors">Turbo & Doładowanie</a></li>
               </ul>
             </div>
 
@@ -806,7 +800,7 @@ export default function Home() {
                   </a>
                 </li>
                 <li>Pon – Pt: 8:00 – 18:00</li>
-                <li>Sob: 9:00 – 15:00</li>
+                <li>Sob: 9:00 – 14:00</li>
               </ul>
             </div>
           </div>
@@ -814,10 +808,10 @@ export default function Home() {
           <div className="mt-12 red-line" />
 
           <div className="mt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-muted">
-            <p>&copy; {new Date().getFullYear()} Arek Detailing. Wszelkie prawa zastrzeżone.</p>
+            <p>&copy; {new Date().getFullYear()} Arek Garage. Wszelkie prawa zastrzeżone.</p>
             <div className="flex items-center gap-4">
-              <span className="font-jp text-jdm/20">アレク・ディテーリング</span>
-              <span>Warszawa Zacisze — JDM Spirit Detailing</span>
+              <span className="font-jp text-jdm/20">アレク・ガレージ</span>
+              <span>Warszawa Zacisze — JDM Spirit Garage</span>
             </div>
           </div>
         </div>

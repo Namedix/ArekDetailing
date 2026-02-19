@@ -24,23 +24,23 @@ const notoSansJP = Noto_Sans_JP({
 });
 
 export const metadata: Metadata = {
-  title: "Arek Detailing | Auto Detailing Warszawa Zacisze — JDM Spirit",
+  title: "Arek Garage | Warsztat Samochodowy Warszawa Zacisze — JDM Spirit",
   description:
-    "Profesjonalny auto detailing w Warszawie Zacisze. Korekta lakieru, powłoki ceramiczne, PPF, pranie tapicerki. Pasja do JDM i perfekcyjny detailing. Umów się na bezpłatną wycenę!",
+    "Warsztat samochodowy z duszą JDM w Warszawie Zacisze. Serwis mechaniczny, tuning, diagnostyka, naprawy silników, zawieszenie, turbo. Specjalizacja w autach japońskich. Umów wizytę!",
   keywords: [
-    "auto detailing warszawa",
-    "detailing zacisze",
-    "korekta lakieru warszawa",
-    "powłoka ceramiczna warszawa",
-    "pranie tapicerki warszawa",
-    "ppf warszawa",
-    "jdm detailing",
-    "arek detailing",
+    "warsztat samochodowy warszawa",
+    "mechanik zacisze",
+    "serwis jdm warszawa",
+    "tuning warszawa",
+    "diagnostyka komputerowa warszawa",
+    "naprawa silnika warszawa",
+    "warsztat jdm",
+    "arek garage",
   ],
   openGraph: {
-    title: "Arek Detailing | Auto Detailing Warszawa Zacisze — JDM Spirit",
+    title: "Arek Garage | Warsztat Samochodowy Warszawa Zacisze — JDM Spirit",
     description:
-      "Profesjonalny auto detailing w Warszawie Zacisze. Korekta lakieru, powłoki ceramiczne, PPF. Pasja do JDM.",
+      "Warsztat samochodowy z duszą JDM w Warszawie Zacisze. Serwis, tuning, diagnostyka. Specjalizacja w autach japońskich.",
     type: "website",
     locale: "pl_PL",
   },
